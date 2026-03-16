@@ -9,3 +9,5 @@ FROM runpod/worker-comfyui:5.5.1-base
 
 # copy all input data (like images or videos) into comfyui (uncomment and adjust if needed)
 # COPY input/ /comfyui/input/
+RUN rm -rf /comfyui/models/loras \
+ && ln -s /runpod-volume/models/lora /comfyui/models/loras
